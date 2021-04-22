@@ -2,7 +2,7 @@
 % Please edit documentation in R/getCorrelationRange.R
 \name{getCorrelationRange}
 \alias{getCorrelationRange}
-\title{Compute the correlation range values for all genes in the gene-gene correlation matrix}
+\title{Compute the correlation range values for all genes in the gene-gene correlation matrix.}
 \usage{
 getCorrelationRange(correlation_matrix)
 }
@@ -13,5 +13,5 @@ getCorrelationRange(correlation_matrix)
 list of p-values, adjusted p-values and correlation ranges for each gene
 }
 \description{
-Compute the correlation range values for all genes in the gene-gene correlation matrix
+Compute the correlation range values for all genes in the gene-gene correlation matrix.
 }

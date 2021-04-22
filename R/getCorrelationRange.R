@@ -1,4 +1,4 @@
-#' @title Compute the correlation range values for all genes in the gene-gene correlation matrix
+#' @title Compute the correlation range values for all genes in the gene-gene correlation matrix.
 #' @param correlation_matrix gene-gene correlation matrix
 #' @return list of p-values, adjusted p-values and correlation ranges for each gene
 #'

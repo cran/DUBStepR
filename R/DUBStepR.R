@@ -15,10 +15,11 @@
 #' @export
 #'
 DUBStepR <- function(input.data, min.cells = 0.05*ncol(input.data), optimise.features = TRUE, k = 10, num.pcs = 20, error = 0) {
-        
-    # Print data dimensions
-    message(paste("Dimensions of input data:", dim(input.data)))
-        
+    
+    # Message
+    message(" ")
+    message("Running DUBStepR...")
+    
     # Filter genes
     filt.data <- getFilteredData(data = input.data, min.cells = min.cells)
     
