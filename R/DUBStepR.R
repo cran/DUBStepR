@@ -27,12 +27,12 @@ DUBStepR <- function(input.data, min.cells = 0.05*ncol(input.data), optimise.fea
     ggc.out <- getGGC(data = filt.data)
     
     # Run stepwise regression
-    swreg.out <- runStepwiseReg(ggc = ggc.out$ggc, filt.data = filt.data)
+    swreg.out <- runStepwiseReg(ggc = ggc.out$ggc)
     corr.info <- data.frame(feature.genes = swreg.out$feature.genes, corr.range = ggc.out$corr.range[swreg.out$feature.genes])
     
     if(optimise.features) {
         
-        if(ncol(filt.data) > 40000) {
+        if(ncol(filt.data) > 10000) {
             error = 1
         }
         

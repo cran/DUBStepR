@@ -1,10 +1,9 @@
 #' @title Run step-wise regression to order the features
 #' @param ggc gene-gene correlation matrix
-#' @param filt.data filtered and normalised log-transformed genes x cells single-cell RNA-seq data matrix
 #' @return optimal feature set
 #'
 #'
-runStepwiseReg <- function(ggc, filt.data) {
+runStepwiseReg <- function(ggc) {
 
     # Initialize variables
     ggc.cols <- ncol(ggc)
@@ -78,6 +77,10 @@ runStepwiseReg <- function(ggc, filt.data) {
     
     # Find elbow point
     elbow_id <- findElbow(y = log(scree_values)[1:num_steps], ylab = "Log Variance Explained", plot = FALSE)
+    
+    # In case elbow is beyond set of feature genes
+    if(elbow_id > length(feature_genes))
+        elbow_id = length(feature_genes)
     
     # Initialise variables to add neighbours
     elbow_feature_genes <- feature_genes[1:elbow_id]
