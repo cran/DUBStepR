@@ -5,8 +5,8 @@ knitr::opts_chunk$set(
 )
 
 ## ----message=FALSE, warning=FALSE---------------------------------------------
-if (!("DUBStepR" %in% .packages()))
-  install.packages("DUBStepR", repos = "https://cloud.r-project.org")
+if (!require(DUBStepR))
+  install.packages("DUBStepR")
 
 ## ----warning=FALSE------------------------------------------------------------
 library(DUBStepR)
