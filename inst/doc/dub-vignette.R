@@ -12,12 +12,12 @@ if (!require(DUBStepR))
 library(DUBStepR)
 
 ## ----message=FALSE, warning=FALSE---------------------------------------------
-# install.packages(c("Seurat", "hdf5r"), repos = "https://cloud.r-project.org")
 library(Seurat)
 library(dplyr)
 
 ## ----warning=FALSE------------------------------------------------------------
-seuratObj <- CreateSeuratObject(counts = Read10X_h5("pbmc_1k_v2_filtered_feature_bc_matrix.h5"), assay = "RNA", project = "10k_PBMC")
+load("counts.rda")
+seuratObj <- CreateSeuratObject(counts = counts, assay = "RNA", project = "10k_PBMC")
 seuratObj
 
 ## -----------------------------------------------------------------------------
